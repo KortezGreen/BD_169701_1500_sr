@@ -18,3 +18,46 @@ INSERT INTO walizka (pojemnosc, kolor, id_wlasciciela) VALUES ('100','czerwony',
 INSERT INTO walizka (pojemnosc, kolor, id_wlasciciela) VALUES ('10','różowy','3'); 
 
 Zadanie 3
+CREATE TABLE izba (adres_budynku VARCHAR(255), nazwa_izby VARCHAR(255), metraz INT UNSIGNED, wlasciciel int, PRIMARY KEY(adres_budynku, nazwa_izby), FOREIGN KEY (wlasciciel) REFERENCES postac(id_postaci) ON DELETE SET NULL);
+
+ALTER TABLE izba ADD kolor_izby varchar(255) DEFAULT 'czarny' AFTER metraz;
+
+insert into izba (adres_budynku, nazwa_izby) values ('piwnicza 1', 'spizarnia');
+
+Zadanie 4
+create table przetwory (id_przetwory int primary key, rok_produkcji year default (1654), id_wykonawcy int, foreign key(id_wykonawcy) references postac(id_postaci), zawartosc varchar(40), dodatek varchar(40) default "papryczka chilli", id_konsumenta int, foreign key(id_konsumenta) references postac(id_postaci));
+
+insert into przetwory (id_przetwory, rok_produkcji, dodatek) values ('1', '2000', 'papryczka chilli');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
