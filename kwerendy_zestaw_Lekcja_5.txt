@@ -1,0 +1,12 @@
+(zadanie 1)
+
+select * from wyprawa;
+select * from kreatura;
+
+CREATE table uczestnicy AS SELECT * FROM wikingowie.uczestnicy;
+CREATE table etapy_wyprawy AS SELECT * FROM wikingowie.etapy_wyprawy;
+CREATE table sektor AS SELECT * FROM wikingowie.sektor;
+CREATE table wyprawa AS SELECT * FROM wikingowie.wyprawa;
+
+select kreatura.nazwa from kreatura left join wyprawa on kreatura.idKreatury=wyprawa.kierownik where kreatura.idKreatury!=1 and kreatura.idKreatury!=14 and kreatura.idKreatury!=16;
+
