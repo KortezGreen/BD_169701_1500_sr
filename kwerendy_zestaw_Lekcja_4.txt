@@ -20,3 +20,5 @@ select kreatura.nazwa from kreatura left join ekwipunek on kreatura.idKreatury=e
 
 (zadanie 4)
 
+select kreatura.nazwa, zasob.nazwa from kreatura, ekwipunek, zasob where kreatura.idKreatury=ekwipunek.idKreatury and zasob.idZasobu=ekwipunek.idZasobu and kreatura.dataUr between '1670-01-01' and '1679-12-31' and kreatura.rodzaj='wiking';
+
