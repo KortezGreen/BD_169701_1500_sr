@@ -20,9 +20,7 @@ select kreatura.nazwa from kreatura left join ekwipunek on kreatura.idKreatury=e
 
 (zadanie 4)
 
-select kreatura.nazwa, zasob.nazwa from kreatura, ekwipunek, zasob where kreatura.idKreatury=ekwipunek.idKreatury and zasob.idZasobu=ekwipunek.idZasobu and kreatura.dataUr between '1670-01-01' and '1679-12-31' and kreatura.rodzaj='wiking';
-
-
+select kreatura.nazwa, group_concat(zasob.nazwa) as zestaw from kreatura natural join ekwipunek inner join zasob on zasob.idZasobu=ekwipunek.idZasobu where kreatura.dataUr between '1670-01-01' and '1679-12-31' and kreatura.rodzaj='wiking' group by kreatura.nazwa;
 
 select distinct kreatura.nazwa, kreatura.dataUr from zasob, ekwipunek, kreatura where zasob.idZasobu = ekwipunek.idZasobu and kreatura.idKreatury = ekwipunek.idKreatury and zasob.rodzaj = 'jedzenie' order by kreatura.dataUr desc limit 5;
 
