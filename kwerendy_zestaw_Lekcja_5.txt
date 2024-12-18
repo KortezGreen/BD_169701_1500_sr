@@ -10,3 +10,7 @@ CREATE table wyprawa AS SELECT * FROM wikingowie.wyprawa;
 
 select kreatura.nazwa from kreatura left join wyprawa on kreatura.idKreatury=wyprawa.kierownik where kreatura.idKreatury!=1 and kreatura.idKreatury!=14 and kreatura.idKreatury!=16;
 
+select wyprawa.nazwa, sum(ekwipunek.ilosc) as suma_eq from ekwipunek inner join uczestnicy on ekwipunek.idKreatury=uczestnicy.id_uczestnika inner join wyprawa on wyprawa.id_wyprawy=uczestnicy.id_wyprawy GROUP BY wyprawa.nazwa;
+
+(zadanie 2)
+
