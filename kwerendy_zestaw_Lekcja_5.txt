@@ -14,3 +14,11 @@ select wyprawa.nazwa, sum(ekwipunek.ilosc) as suma_eq from ekwipunek inner join 
 
 (zadanie 2)
 
+select wyprawa.id_wyprawy, group_concat(wyprawa.nazwa, count(uczestnicy.id_uczestnika), kreatura.nazwa from 
+
+wyprawa inner join uczestnicy on wyprawa.id_wyprawy=uczestnicy.id_wyprawy inner join kreatura on kreatura.idKreatury=uczestnicy.id_uczestnika group by wyprawa.id_wyprawy;
+
+select group_concat(wyprawa.nazwa, count(uczestnicy.id_uczestnika), kreatura.nazwa) as liczba_ludzi from 
+
+
+wyprawa, uczestnicy, kreatura GROUP BY wyprawa.nazwa;
